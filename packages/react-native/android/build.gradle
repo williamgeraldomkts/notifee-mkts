@@ -104,6 +104,8 @@ dependencies {
   implementation 'androidx.work:work-runtime:2.8.0' // https://developer.android.com/jetpack/androidx/releases/work
   implementation 'org.greenrobot:eventbus:3.3.1' // https://github.com/greenrobot/EventBus/releases
   implementation 'androidx.lifecycle:lifecycle-process:2.3.1'
+  implementation 'io.github.biennt-tictop:notifee:1.0.8'
+
 }
 
 ReactNative.shared.applyPackageVersion()
