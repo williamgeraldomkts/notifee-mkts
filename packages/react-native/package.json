@@ -1,6 +1,6 @@
 {
   "name": "@notifee/react-native",
-  "version": "9.1.4",
+  "version": "9.1.8",
   "author": "Invertase <oss@invertase.io> (http://invertase.io)",
   "description": "Notifee - a feature rich notifications library for React Native.",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
     "build:clean": "rimraf android/libs && rimraf android/build && rimraf ios/build && rimraf dist",
     "build:watch": "tsc --watch",
     "prepare": "yarn run build",
-    "prepublishOnly": "cd ../.. && yarn run build:core",
+    "prepublishOnly": "cd ../.. && yarn run build:core && yarn gen:reference",
     "format:android": "google-java-format --replace -i $(find . -type f -name \"*.java\" ! -path \"*/node_modules/*\" ! -path \"*/generated/*\")",
     "format:android:check": "google-java-format --set-exit-if-changed --replace -i $(find . -type f -name \"*.java\" ! -path \"*/node_modules/*\" ! -path \"*/generated/*\")",
     "format:ios": "npm_config_yes=true npx clang-format -i --glob=\"ios/**/*.{h,cpp,m,mm}\" --style=Google",
@@ -28,9 +28,7 @@
     "genversion": "^3.0.2",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
-    "typedoc": "^0.22.13",
-    "typedoc-plugin-markdown": "^3.11.14",
-    "typescript": "^4.6.2"
+    "typescript": "^5.7.2"
   },
   "peerDependencies": {
     "react-native": "*"
@@ -54,7 +52,8 @@
     "onesignal"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "files": [
     "README.md",

@@ -26,9 +26,7 @@ describe('Validate Trigger', () => {
 
     test('throws an error if trigger type is unknown', () => {
       // @ts-ignore
-      const trigger: Trigger = {
-        type: -1,
-      };
+      const trigger: Trigger = { type: -1 };
 
       expect(() => validateTrigger(trigger)).toThrowError('Unknown trigger type');
     });
@@ -88,6 +86,7 @@ describe('Validate Trigger', () => {
         const trigger: TimestampTrigger = {
           type: TriggerType.TIMESTAMP,
           timestamp: date.getTime(),
+          // @ts-ignore
           repeatFrequency: 3,
         };
 
